@@ -15,9 +15,7 @@ const getData = async (searchData) => {
     `https://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=${searchData}`
   );
   let data = await response.json();
-  //   console.log(data);
   if (data.error) {
-    // alert("invalid input");
     container.style.display = "none";
     invalidContainer.style.display = "flex";
     return;
@@ -51,19 +49,8 @@ const getData = async (searchData) => {
     card.setAttribute("class", "");
     card.setAttribute("class", "rainy");
   }
-  // if (weatherCode === 1000) {
-  //   card.setAttribute("class", "");
-  // card.setAttribute("class", "sunny");
-  // } else if (weatherCode >= 1003) {
-  //   card.setAttribute("class", "");
-  //   card.setAttribute("class", "rainy");
-  // } else {
-  //   card.setAttribute("class", "");
-  //   card.setAttribute("class", "night");
-  // }
 };
 
 search.addEventListener("click", () => {
-  //   console.log(searchQuery.value.trim());
   getData(searchQuery.value.trim());
 });
