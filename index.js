@@ -11,10 +11,10 @@ const area = document.getElementById("area");
 const date = document.getElementById("date");
 
 const getData = async (searchData) => {
-  let response = await fetch(
+  const response = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=${searchData}`
   );
-  let data = await response.json();
+  const data = await response.json();
   if (data.error) {
     container.style.display = "none";
     invalidContainer.style.display = "flex";
